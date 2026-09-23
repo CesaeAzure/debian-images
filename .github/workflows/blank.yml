@@ -35,5 +35,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls -all
-          docker build -t debiancesae:v1 .
-          docker images
+          ls -la hello
+          cd hello
+          docker build -t aula230926.azurecr.io/ricardo:v1
+          docker login -u ${{ secrets.UTILIZADOR }} -p ${{ secrets.SEGREDO }} aula230926.azurecr.io
+          docker push aula230926.azurecr.io/ricardo:v1
