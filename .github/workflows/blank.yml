@@ -37,6 +37,6 @@ jobs:
           ls -all
           ls -la hello
           cd hello
-          docker build -t aula230926.azurecr.io/ricardo:v1
+          docker build -t aula230926.azurecr.io/ricardo:v1 .
           docker login -u ${{ secrets.UTILIZADOR }} -p ${{ secrets.SEGREDO }} aula230926.azurecr.io
           docker push aula230926.azurecr.io/ricardo:v1
